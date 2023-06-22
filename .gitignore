@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+
+# next.js
+.next
+
+# production
+build
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vscode
+.vscode
+
+# google 
+# google-secrets.json
+
+# logs
+# .nohup.out

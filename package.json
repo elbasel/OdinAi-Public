@@ -1,0 +1,44 @@
+{
+  "name": "odin-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "@vercel/analytics": "^1.0.1",
+    "@vercel/kv": "^0.2.1",
+    "autoprefixer": "10.4.14",
+    "cheerio": "1.0.0-rc.12",
+    "client-only": "^0.0.1",
+    "encoding": "^0.1.13",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "google-auth-library": "^8.8.0",
+    "langchain": "^0.0.88",
+    "next": "13.4.4",
+    "next-auth": "^4.22.1",
+    "node-youtube-music": "^0.10.3",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.9.0",
+    "react-markdown": "^8.0.7",
+    "react-youtube": "^10.1.0",
+    "striptags": "4.0.0-alpha.4",
+    "tailwind-merge": "^1.12.0",
+    "tailwind-scrollbar": "^3.0.4",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "tailwindcss-animate": "^1.0.5"
+  }
+}
