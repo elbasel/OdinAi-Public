@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the code for https://odin-elbasel.vercel.app website.
+The original repo `OdinAi` has been made private for security reasons and so should yours if you plan to use GoogleVertexAi with your deployment.
 
-## Getting Started
 
-First, run the development server:
+This app used NextJs13.4 making use of sever actions and server compnents.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Most pages are generated SSR and revalidated on client-side user action with the help of a redis based database (vercel redis in this case).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Uses tailwindCss for styling along with two plugins: `tailwind-animate` and `tailwind-scrollbar`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Different parts of the app are divided into semantically-named folders, for example the `auth` folder contains all the needed backend-side api calls (server actions) AND the UI React components used on the /auth page.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Further, each folder is divided into sub-folders, for example the `auth` folder is divided into `actions`, `lib` and `ui` where:
+* `actions` contains the api calls (server actions) that run server-only
+* `lib` contains type definitoins and other helper classes.
+* `ui` contains the react components used in the `/app/auth/page.tsx` page.
 
-## Learn More
+`actions` and `ui` are a common pattern while the `/auth` folder contains the `[...nextauth]`, this is a catch-all route handler that handles all https requests: GET, POST, PUT, etc...
 
-To learn more about Next.js, take a look at the following resources:
+This is the only route handler in the app as everything else is handled using server actions. This might change in the future as NextAuth might add server actions support.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+the `test` folder contains sub-folder each with it's own page.tsx that can be used to render components in isolation for testing. for example, `test/button/page.tsx` can be used to test the button component at `ui/buttons/Button.tsx`. This acts as a lightweight psuedo storybook alternative.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
